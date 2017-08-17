@@ -9,18 +9,18 @@ import "html/template"
 import "os"
 
 type dockerfile struct {
-	Base       string
-	CopyFrom   string
-	CopyTo     string
-	Entrypoint string
+	Base     string
+	CopyFrom string
+	CopyTo   string
+	Command  string
 }
 
 func main() {
 
-	mysql := dockerfile{Base: "mysql:5.6.34",
-		CopyFrom:   "entrypoint.sh r.sql my.cnf start.sh",
-		CopyTo:     "/tmp/",
-		Entrypoint: "/usr/bin/hostname"}
+	mysql := dockerfile{Base: "luotian1/learn-ping",
+		CopyFrom: "*",
+		CopyTo:   "/tmp/",
+		Command:  "which ping"}
 
 	//fmt.Println("dockerfile = ", mysql)
 	var tmpl *template.Template
