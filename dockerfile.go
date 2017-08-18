@@ -20,7 +20,7 @@ func main() {
 	mysql := dockerfile{Base: "luotian1/learn-ping",
 		CopyFrom: "*",
 		CopyTo:   "/tmp/",
-		Command:  "which ping"}
+		Command:  "ping 10.110.18.70"}
 
 	//fmt.Println("dockerfile = ", mysql)
 	var tmpl *template.Template
